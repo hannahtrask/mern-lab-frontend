@@ -23,7 +23,9 @@ const Display = (props) => {
 										<h2>{garden.name}</h2>
 										<p>{garden.plants}</p>
 										<div className='button-div'>
-											<button className='update-delete'>
+											<button onClick={()=>{
+                                                props.plowGarden(garden)
+                                            }} className='update-delete'>
 												PLOW GARDEN
 											</button>
 											<button className='update-delete'>

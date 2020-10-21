@@ -45,6 +45,15 @@ function App() {
 		})
 	}
 
+	//this will delete a garden
+	//try using axios
+	const plowGarden = (garden) => {
+		axios.delete(url+'/gardens/'+garden._id)
+			.then(res => console.log(res.data))
+			.catch(err => console.log(err))
+			.then(()=>getGardens())
+	}
+
 	return (
 		<>
 			<nav>
@@ -59,7 +68,7 @@ function App() {
 				<Route
 					exact
 					path='/'
-					render={(rp) => <Display {...rp} garden={gardens} />}
+					render={(rp) => <Display {...rp} garden={gardens} plowGarden={plowGarden} />}
 				/>
 				<Route
 					exact
