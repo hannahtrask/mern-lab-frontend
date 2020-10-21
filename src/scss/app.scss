@@ -1,0 +1,55 @@
+@import './_config';
+
+body {
+    background-image: url('../images/hunt_han_flowers.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+}
+
+nav {
+    height: 100px;
+    background-color: $white;
+    opacity: .8;
+    display: flex;
+    justify-content: space-around;
+    .gardens {
+        text-decoration: none;
+        color: $pink;
+        text-transform: uppercase;
+    }
+}
+
+form {
+    text-align: center;
+    margin: 10px;
+    color: $leafGreen;
+    input {
+        border: none;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .submit {
+        background-color: $darkPink;
+        color: $white;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    opacity: .9;
+    button {
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 30px;
+    width: 200px;
+    background-color: $pink;
+    color: white;
+    font-size: 20px;
+}
+}
