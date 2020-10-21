@@ -53,7 +53,7 @@ function App() {
 				</Link>
 			</nav>
 			<Link to='/create' className='button'>
-				<button>ADD A GARDEN</button>
+				<button className='add'>ADD A GARDEN</button>
 			</Link>
 			<Switch>
 				<Route
