@@ -31,7 +31,12 @@ const Display = (props) => {
 													className='update-delete'>
 													PLOW GARDEN
 												</button>
-												<button className='update-delete'>
+												<button 
+													onClick={()=>{
+														props.selectGarden(garden)
+														props.history.push('/update')
+													}}
+													className='update-delete'>
 													UPDATE GARDEN DETAILS
 												</button>
 											</div>
