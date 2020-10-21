@@ -10,11 +10,12 @@ body {
 
 
 nav {
-    height: 100px;
+    height: 120px;
     background-color: $white;
     opacity: .8;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     .gardens {
         text-decoration: none;
         color: $pink;
@@ -47,11 +48,12 @@ form {
     justify-content: space-around;
     text-decoration: none;
     opacity: .9;
+    //make this a mixin so you can pass these buttons everywhere
     button {
     border: none;
     border-radius: 5px;
     margin: 10px;
-    padding: 30px;
+    padding: 25px;
     width: 200px;
     background-color: $pink;
     color: white;

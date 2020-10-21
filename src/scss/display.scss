@@ -21,6 +21,18 @@
         text-align: center;
     }
     }
-
+    .button-div{
+        display: flex;
+        justify-content: space-evenly;
+        opacity: .9;
+        .update-delete{
+            margin: 10px;
+            background-color: $darkPink;
+            color: $white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+    }
 
 }

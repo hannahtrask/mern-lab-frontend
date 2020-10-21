@@ -16,18 +16,24 @@ const Display = (props) => {
     const loaded = () => {
         if (Array.isArray(gardenArr)) {
             return (
-            <div className="garden-card">
-                {gardenArr.map((garden) => (
-                    <div className="single-garden">
-                        <img src={garden.image} />
-                        <h2>{garden.name}</h2>
-                        <p>{garden.plants}</p>
-                    </div>
-                    ))}
-            </div>
-
-
-            )
+							<div className='garden-card'>
+								{gardenArr.map((garden) => (
+									<div className='single-garden'>
+										<img src={garden.image} />
+										<h2>{garden.name}</h2>
+										<p>{garden.plants}</p>
+										<div className='button-div'>
+											<button className='update-delete'>
+												PLOW GARDEN
+											</button>
+											<button className='update-delete'>
+												UPDATE GARDEN DETAILS
+											</button>
+										</div>
+									</div>
+								))}
+							</div>
+						);
         }
     }
 
