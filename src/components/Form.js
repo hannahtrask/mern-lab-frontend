@@ -4,7 +4,7 @@ import '../scss/app.scss'
 const Form = (props) => {
 
 
-//add an edit button here in the display
+console.log('this is props in form, ', props)
 
 
 

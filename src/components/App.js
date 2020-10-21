@@ -24,6 +24,16 @@ const getGardens = () => {
 //data received, can see in console log below
 //now pass to display
 console.log(gardens)
+
+
+//setting an empty garden to send to form
+const emptyGarden = {
+	name: "",
+	image: ""
+}
+
+
+
 //this will get all gardens on mount
 useEffect(()=>getGardens(), [])
 
@@ -44,12 +54,19 @@ useEffect(()=>getGardens(), [])
 				<button>ADD A GARDEN</button>
 			</Link>
 			<Switch>
-				<Route exact path='/' 
+				<Route exact 
+					   path='/' 
 					   render={(rp) => <Display {...rp}
 						garden={gardens}
 						/>}
 					/>
-				<Route exact path='/create' component={Form} />
+				<Route exact 
+					   path='/create' 			render={(rp)=>(
+					<Form {...rp} label='add-new'
+								  garden={emptyGarden} 
+								  />
+				)} 
+				/>
 			</Switch>
 		</>
 	);
