@@ -48,6 +48,7 @@ form {
     justify-content: space-around;
     text-decoration: none;
     opacity: .9;
+    cursor: auto;
     //make this a mixin so you can pass these buttons everywhere
     button {
     border: none;

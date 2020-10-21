@@ -2,8 +2,12 @@
 
 .garden-card {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    height: 300px;
+    height: 1100px;
+    section {
+        padding: 20px;
+    }
     .single-garden{
         width: 300px;
         height: 300px;

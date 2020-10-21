@@ -18,21 +18,25 @@ const Display = (props) => {
             return (
 							<div className='garden-card'>
 								{gardenArr.map((garden) => (
-									<div className='single-garden'>
-										<img src={garden.image} />
-										<h2>{garden.name}</h2>
-										<p>{garden.plants}</p>
-										<div className='button-div'>
-											<button onClick={()=>{
-                                                props.plowGarden(garden)
-                                            }} className='update-delete'>
-												PLOW GARDEN
-											</button>
-											<button className='update-delete'>
-												UPDATE GARDEN DETAILS
-											</button>
+									<section>
+										<div className='single-garden'>
+											<img src={garden.image} />
+											<h2>{garden.name}</h2>
+											<p>{garden.plants}</p>
+											<div className='button-div'>
+												<button
+													onClick={() => {
+														props.plowGarden(garden);
+													}}
+													className='update-delete'>
+													PLOW GARDEN
+												</button>
+												<button className='update-delete'>
+													UPDATE GARDEN DETAILS
+												</button>
+											</div>
 										</div>
-									</div>
+									</section>
 								))}
 							</div>
 						);
