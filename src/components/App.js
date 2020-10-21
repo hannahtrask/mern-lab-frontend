@@ -41,7 +41,7 @@ function App() {
 		}).then(() => {
 			//don't need a response, just need to update list of gardens
 			//pass this down to form
-			getGardens();
+			getGardens()
 		});
 	};
 
@@ -51,27 +51,38 @@ function App() {
 	//create state so that when you click on garden it'll take you to associated form
 	const [selectedGarden, setSelectedGarden] = useState(emptyGarden);
 
-	//create a function that will make put request and return updated garden set
 	const handlePropagate = (garden) => {
-		axios.put(
-				url + '/gardens/' + garden._id
-				//  {
-				// 	method: "put",
-				// 	headers: {
-				// 		"Content-Type":"application/json"
-				// 	},
-				// 	body: JSON.stringify(garden)
-				// }
-			)
-			.then(() => {
-				getGardens();
-			});
-	};
+		fetch(url+'/gardens/'+garden._id, {
+			method:"put",
+			headers: {
+				"Content-Type":"application/json"
+			},
+			body: JSON.stringify(garden)
+		}).then(()=>{
+			getGardens()
+		})
+	}
+	// //create a function that will make put request and return updated garden set
+	// const handlePropagate = (garden) => {
+	// 	axios.put(
+	// 			url + '/gardens/' + garden._id
+	// 			//  {
+	// 			// 	method: "put",
+	// 			// 	headers: {
+	// 			// 		"Content-Type":"application/json"
+	// 			// 	},
+	// 			// 	body: JSON.stringify(garden)
+	// 			// }
+	// 		)
+	// 		.then(() => {
+	// 			getGardens();
+	// 		});
+	// };
 
 	//this func will set the garden to that. send to form
 	//can prob refactor so there's not so much happening in app.js
 	//send to display to lift to app and then send to form
-	//use history.push('/update')
+	//use
 	const selectGarden = (garden) => {
 		setSelectedGarden(garden)
 	}
@@ -112,7 +123,8 @@ function App() {
 					render={(rp) => (<Form
 										{...rp}
 										garden={selectedGarden}
-										handlePropagate={handlePropagate}/>
+										handleSubmit={handlePropagate}
+										 />
 					)}
 				/>
 				<Route
@@ -123,7 +135,7 @@ function App() {
 							{...rp}
 							label='create'
 							garden={emptyGarden}
-							handleCreate={handleCreate}
+							handleSubmit={handleCreate}
 						/>
 					)}
 				/>

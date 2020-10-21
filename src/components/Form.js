@@ -15,7 +15,7 @@ const Form = (props) => {
 		//prevents refresh on submit
 		e.preventDefault();
 		//this is the handleCreate function from app
-		props.handleCreate(data);
+		props.handleSubmit(data);
 		//this will send you back to the display page after submitting
 		//or it should, for whatever reason it won't
 		props.history.push('/');
