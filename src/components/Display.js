@@ -22,7 +22,6 @@ const Display = (props) => {
 										<div className='single-garden'>
 											<img src={garden.image} />
 											<h2>{garden.name}</h2>
-											<p>{garden.plants}</p>
 											<div className='button-div'>
 												<button
 													onClick={() => {
@@ -30,14 +29,6 @@ const Display = (props) => {
 													}}
 													className='update-delete'>
 													PLOW GARDEN
-												</button>
-												<button 
-													onClick={()=>{
-														props.selectGarden(garden)
-														props.history.push('/update')
-													}}
-													className='update-delete'>
-													UPDATE GARDEN DETAILS
 												</button>
 											</div>
 										</div>

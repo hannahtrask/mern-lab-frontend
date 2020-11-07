@@ -62,22 +62,6 @@ function App() {
 			getGardens()
 		})
 	}
-	// //create a function that will make put request and return updated garden set
-	// const handlePropagate = (garden) => {
-	// 	axios.put(
-	// 			url + '/gardens/' + garden._id
-	// 			//  {
-	// 			// 	method: "put",
-	// 			// 	headers: {
-	// 			// 		"Content-Type":"application/json"
-	// 			// 	},
-	// 			// 	body: JSON.stringify(garden)
-	// 			// }
-	// 		)
-	// 		.then(() => {
-	// 			getGardens();
-	// 		});
-	// };
 
 	//this func will set the garden to that. send to form
 	//can prob refactor so there's not so much happening in app.js
@@ -90,10 +74,9 @@ function App() {
 	//this will delete a garden
 	//try using axios
 	const plowGarden = (garden) => {
-		axios
-			.delete(url + '/gardens/' + garden._id)
-			.then((res) => console.log(res.data))
-			.catch((err) => console.log(err))
+		axios.delete(url + '/gardens/' + garden._id)
+			// .then((res) => console.log(res.data))
+			// .catch((err) => console.log(err))
 			.then(() => getGardens());
 	};
 
